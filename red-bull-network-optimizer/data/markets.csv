@@ -1,0 +1,26 @@
+market_id,name,country,latitude,longitude,annual_demand_millions,revenue_per_unit_eur,seasonality_summer_multiplier,market_maturity
+M1,United States,USA,37.0902,-95.7129,350,2.8,1.3,Mature
+M2,Germany,Germany,51.1657,10.4515,85,2.65,1.2,Mature
+M3,United Kingdom,UK,55.3781,-3.436,65,2.7,1.15,Mature
+M4,Brazil,Brazil,-14.235,-51.9253,55,2.4,1.1,Growth
+M5,France,France,46.2276,2.2137,48,2.68,1.25,Mature
+M6,Austria,Austria,47.5162,14.5501,42,2.6,1.2,Mature
+M7,Netherlands,Netherlands,52.1326,5.2913,38,2.72,1.18,Mature
+M8,Japan,Japan,36.2048,138.2529,45,3.0,1.1,Mature
+M9,China,China,35.8617,104.1954,40,2.5,1.05,High-Growth
+M10,Australia,Australia,-25.2744,133.7751,32,2.85,1.4,Mature
+M11,Mexico,Mexico,23.6345,-102.5528,35,2.3,1.15,Growth
+M12,India,India,20.5937,78.9629,28,2.2,1.3,High-Growth
+M13,Canada,Canada,56.1304,-106.3468,30,2.75,1.25,Mature
+M14,Spain,Spain,40.4637,-3.7492,28,2.62,1.35,Mature
+M15,Italy,Italy,41.8719,12.5674,26,2.66,1.3,Mature
+M16,Poland,Poland,51.9194,19.1451,22,2.35,1.15,Growth
+M17,South Korea,South Korea,35.9078,127.7669,24,2.9,1.1,Mature
+M18,UAE,UAE,23.4241,53.8478,20,2.95,1.05,Growth
+M19,South Africa,South Africa,-30.5595,22.9375,18,2.25,1.2,Growth
+M20,Turkey,Turkey,38.9637,35.2433,19,2.4,1.25,Growth
+M21,Russia,Russia,61.524,105.3188,25,2.45,1.15,Growth
+M22,Thailand,Thailand,15.87,100.9925,21,2.35,1.1,Growth
+M23,Indonesia,Indonesia,-0.7893,113.9213,17,2.28,1.08,High-Growth
+M24,Argentina,Argentina,-38.4161,-63.6167,15,2.35,1.12,Growth
+M25,Sweden,Sweden,60.1282,18.6435,16,2.78,1.2,Mature

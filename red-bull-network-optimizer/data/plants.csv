@@ -1,0 +1,5 @@
+plant_id,name,city,country,latitude,longitude,capacity_annual_millions,cost_per_unit_eur,notes
+P1,Red Bull Headquarters Plant,Fuschl am See,Austria,47.8011,13.2697,500,0.18,Largest facility - European distribution hub
+P2,Red Bull North America Plant,Concord,USA,35.4087,-80.5795,300,0.22,Serves Americas region
+P3,Red Bull South America Plant,Jundiaí,Brazil,-23.1864,-46.8842,200,0.2,Growing LATAM market
+P4,Red Bull Asia-Pacific Plant,Rayong,Thailand,12.6814,101.2815,250,0.19,Serves Asian markets

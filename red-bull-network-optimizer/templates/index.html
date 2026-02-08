@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Bull Global Network Optimizer | Strategic Supply Chain Analytics</title>
+    
+    <!-- External Libraries from CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>⚡ Red Bull Global Network Optimizer</h1>
+            <p class="tagline">Strategic Supply Chain Intelligence for Operational Excellence</p>
+        </div>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav class="main-nav">
+        <button class="nav-btn active" data-section="overview">Executive Overview</button>
+        <button class="nav-btn" data-section="network">Network Visualization</button>
+        <button class="nav-btn" data-section="scenarios">Scenario Analysis</button>
+        <button class="nav-btn" data-section="insights">Strategic Insights</button>
+    </nav>
+
+    <!-- SECTION 1: EXECUTIVE OVERVIEW -->
+    <section id="overview" class="dashboard-section active">
+        <div class="container">
+            <h2 class="section-title">Current Network Performance</h2>
+            
+            <!-- KPI CARDS WITH BUSINESS CONTEXT -->
+            <div class="kpi-grid">
+                <!-- Card 1: Total Cost -->
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <h3>Total Network Cost</h3>
+                        <span class="kpi-icon">💰</span>
+                    </div>
+                    <div class="kpi-value">
+                        <span class="number" id="kpi-cost-value">€338.7M</span>
+                        <span class="trend negative" id="kpi-cost-trend">+11.2% vs optimal</span>
+                    </div>
+                    <div class="kpi-context">
+                        <p class="impact" id="kpi-cost-impact">€30M optimization opportunity through DC reallocation</p>
+                        <p class="action" id="kpi-cost-action">→ 2.3pp EBIT improvement potential</p>
+                    </div>
+                </div>
+
+                <!-- Card 2: Fill Rate -->
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <h3>Service Level (Fill Rate)</h3>
+                        <span class="kpi-icon">📦</span>
+                    </div>
+                    <div class="kpi-value">
+                        <span class="number" id="kpi-fillrate-value">100.0%</span>
+                        <span class="trend positive" id="kpi-fillrate-trend">Target achieved</span>
+                    </div>
+                    <div class="kpi-context">
+                        <p class="impact" id="kpi-fillrate-impact">All demand fulfilled - strong market coverage</p>
+                        <p class="action" id="kpi-fillrate-action">→ Maintain service excellence</p>
+                    </div>
+                </div>
+
+                <!-- Card 3: Lead Time -->
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <h3>Average Delivery Time</h3>
+                        <span class="kpi-icon">🚚</span>
+                    </div>
+                    <div class="kpi-value">
+                        <span class="number" id="kpi-leadtime-value">8.3 days</span>
+                        <span class="trend negative" id="kpi-leadtime-trend">+2.1d vs competition</span>
+                    </div>
+                    <div class="kpi-context">
+                        <p class="impact" id="kpi-leadtime-impact">Each extra day ties up €2.2M in working capital</p>
+                        <p class="action" id="kpi-leadtime-action">→ Strategic air freight saves €2M net annually</p>
+                    </div>
+                </div>
+
+                <!-- Card 4: Sustainability -->
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <h3>Carbon Footprint</h3>
+                        <span class="kpi-icon">🌱</span>
+                    </div>
+                    <div class="kpi-value">
+                        <span class="number" id="kpi-co2-value">45K tonnes</span>
+                        <span class="trend negative" id="kpi-co2-trend">+12.5% vs target</span>
+                    </div>
+                    <div class="kpi-context">
+                        <p class="impact" id="kpi-co2-impact">Missing 2025 goal → €8M carbon tax risk by 2027</p>
+                        <p class="action" id="kpi-co2-action">→ Modal shift to rail = 15% emissions reduction</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- KEY INSIGHTS PANEL -->
+            <div class="insights-panel">
+                <h2>Executive Summary: Current State Assessment</h2>
+                <div class="insight-cards" id="overview-insights">
+                    <div class="insight-card priority-medium">
+                        <span class="priority-badge">OPPORTUNITY</span>
+                        <h4>Cost Optimization Analysis Available</h4>
+                        <p>Run cost optimization scenario to identify potential savings through network redesign. Typically 8-12% cost reduction achievable through DC consolidation and routing optimization.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STRATEGIC TRADE-OFFS VISUALIZATION -->
+            <div class="chart-section">
+                <h2>Cost Breakdown by Component</h2>
+                <p class="chart-context">Understanding where money flows in the network helps prioritize optimization efforts. Transportation represents the largest variable cost and primary optimization target.</p>
+                <div class="chart-container">
+                    <canvas id="cost-breakdown-chart"></canvas>
+                </div>
+                <div class="chart-insights">
+                    <div class="insight-item">
+                        <span class="bullet red">●</span>
+                        <strong>Transportation (42%):</strong> Largest cost driver - 10% reduction = €11M annual savings
+                    </div>
+                    <div class="insight-item">
+                        <span class="bullet yellow">●</span>
+                        <strong>Production (29%):</strong> Scale economies at Austria plant drive efficiency
+                    </div>
+                    <div class="insight-item">
+                        <span class="bullet blue">●</span>
+                        <strong>Warehousing (22%):</strong> Fixed DC costs create consolidation opportunity
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: NETWORK VISUALIZATION -->
+    <section id="network" class="dashboard-section">
+        <div class="container">
+            <h2>Global Distribution Network</h2>
+            <p class="section-context">Interactive visualization of Red Bull's production and distribution infrastructure. The network spans 4 manufacturing plants, 12 distribution centers, and serves 25 major markets globally.</p>
+            
+            <!-- Map Controls -->
+            <div class="map-controls">
+                <div class="control-group">
+                    <label>
+                        <input type="checkbox" id="show-plants" checked> 
+                        <span class="legend-dot red"></span> Manufacturing Plants (4)
+                    </label>
+                    <label>
+                        <input type="checkbox" id="show-dcs" checked> 
+                        <span class="legend-dot yellow"></span> Distribution Centers (12)
+                    </label>
+                    <label>
+                        <input type="checkbox" id="show-markets" checked> 
+                        <span class="legend-dot blue"></span> Markets (25)
+                    </label>
+                    <label>
+                        <input type="checkbox" id="show-flows" checked> 
+                        Flow Lines (volume-weighted)
+                    </label>
+                </div>
+            </div>
+
+            <!-- Leaflet Map Container -->
+            <div id="network-map" class="map-container"></div>
+
+            <!-- Network Statistics Panel -->
+            <div class="network-stats">
+                <h3>Network Statistics</h3>
+                <div class="stats-grid">
+                    <div class="stat">
+                        <span class="stat-label">Total Production Capacity</span>
+                        <span class="stat-value">1,250M units/year</span>
+                        <span class="stat-context">Current utilization: 91.5%</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Total Storage Capacity</span>
+                        <span class="stat-value">410M units</span>
+                        <span class="stat-context">Distributed across 12 DCs globally</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Geographic Coverage</span>
+                        <span class="stat-value">25 markets</span>
+                        <span class="stat-context">Spanning 5 continents</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Transport Routes</span>
+                        <span class="stat-value">123 connections</span>
+                        <span class="stat-context">Optimized for cost and speed</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: SCENARIO ANALYSIS -->
+    <section id="scenarios" class="dashboard-section">
+        <div class="container">
+            <h2>Scenario Planning & Optimization</h2>
+            <p class="section-context">Compare alternative network configurations to understand trade-offs and guide strategic decision-making. Each scenario represents a different business objective and reveals distinct operational implications.</p>
+
+            <!-- Scenario Selector -->
+            <div class="scenario-selector">
+                <div class="scenario-card" data-scenario="baseline">
+                    <h3>Current Network</h3>
+                    <p class="scenario-objective">Objective: Baseline Performance</p>
+                    <p class="scenario-desc">Models existing infrastructure and routing with actual costs and service levels. Use for benchmarking and identifying improvement opportunities.</p>
+                    <button class="btn-primary" onclick="runScenario('baseline')">Select & Run</button>
+                </div>
+                <div class="scenario-card" data-scenario="cost_optimized">
+                    <h3>Cost Optimized</h3>
+                    <p class="scenario-objective">Objective: Maximize Profitability</p>
+                    <p class="scenario-desc">Minimize total network cost while maintaining ≥90% fill rate. Expected outcome: 8-12% cost reduction through DC consolidation and production reallocation.</p>
+                    <button class="btn-primary" onclick="runScenario('cost_optimized')">Select & Run</button>
+                </div>
+                <div class="scenario-card" data-scenario="disruption">
+                    <h3>Disruption Response</h3>
+                    <p class="scenario-objective">Objective: Test Resilience</p>
+                    <p class="scenario-desc">Simulate 3-month Austria plant shutdown. Identifies backup capacity gaps and quantifies disruption impact (expected: 13% fill rate drop, €20M+ cost increase).</p>
+                    <button class="btn-primary" onclick="runScenario('disruption')">Select & Run</button>
+                </div>
+            </div>
+
+            <!-- Optimization Status -->
+            <div id="optimization-status" class="status-panel hidden">
+                <div class="spinner"></div>
+                <p>Running network optimization... (typically 5-10 seconds)</p>
+            </div>
+
+            <!-- Results Comparison -->
+            <div id="scenario-results" class="results-panel hidden">
+                <h3>Scenario Results: Key Metrics</h3>
+                
+                <!-- Comparison Table -->
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Baseline</th>
+                            <th class="highlight">Selected Scenario</th>
+                            <th>Change</th>
+                            <th>Business Impact</th>
+                        </tr>
+                    </thead>
+                    <tbody id="comparison-table-body">
+                        <!-- Populated dynamically -->
+                    </tbody>
+                </table>
+
+                <!-- Side-by-Side Charts -->
+                <div class="chart-comparison">
+                    <div class="chart-container">
+                        <h4>Cost Comparison</h4>
+                        <canvas id="cost-comparison-chart"></canvas>
+                        <p class="chart-insight" id="cost-insight"></p>
+                    </div>
+                    <div class="chart-container">
+                        <h4>Service Level by Component</h4>
+                        <canvas id="service-comparison-chart"></canvas>
+                        <p class="chart-insight" id="service-insight"></p>
+                    </div>
+                </div>
+
+                <!-- Strategic Recommendations -->
+                <div class="recommendations-panel">
+                    <h3>Strategic Recommendations</h3>
+                    <div id="recommendations-list">
+                        <!-- Populated dynamically based on scenario results -->
+                    </div>
+                </div>
+
+                <!-- Export Options -->
+                <div class="export-section">
+                    <button class="btn-secondary" onclick="exportExcel()">
+                        📊 Export to Excel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: STRATEGIC INSIGHTS -->
+    <section id="insights" class="dashboard-section">
+        <div class="container">
+            <h2>Strategic Insights & Deep Dive Analytics</h2>
+            <p class="section-context">Advanced analysis revealing structural patterns, risks, and opportunities within the global supply chain network.</p>
+
+            <!-- Regional Performance -->
+            <div class="chart-section">
+                <h3>Production Utilization by Plant</h3>
+                <p class="chart-context">Understanding capacity utilization helps identify expansion priorities and bottleneck risks.</p>
+                <div class="chart-container">
+                    <canvas id="production-chart"></canvas>
+                </div>
+                <div class="chart-insights">
+                    <p><strong>Key findings:</strong></p>
+                    <ul>
+                        <li><strong>Austria (40% of capacity):</strong> Highest utilization - potential bottleneck risk</li>
+                        <li><strong>USA Plant:</strong> Strong Americas market coverage with room for growth</li>
+                        <li><strong>Asia-Pacific:</strong> Thailand plant well-positioned for regional expansion</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Network Resilience -->
+            <div class="chart-section">
+                <h3>Supply Chain Resilience Assessment</h3>
+                <p class="chart-context">Resilience score reflects network ability to absorb disruptions without severe service degradation.</p>
+                <div class="resilience-score">
+                    <div class="score-circle">
+                        <span class="score-number" id="resilience-score">80</span>
+                        <span class="score-label">/100</span>
+                    </div>
+                    <div class="score-details">
+                        <h4>Current Assessment: <span class="score-status" id="resilience-status">Strong</span></h4>
+                        <p id="resilience-context">Network demonstrates good geographic diversity and backup capacity options.</p>
+                        <div class="risk-factors">
+                            <h5>Key Risk Factors:</h5>
+                            <ul id="risk-factors-list">
+                                <li>Single plant concentration (Austria = 40% capacity)</li>
+                                <li>Limited backup production agreements</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Red Bull Global Network Optimizer | Developed by Mohammed Kaif Ahmed</p>
+        <p>Strategic Supply Chain Analytics Portfolio Project | MSc Strategy Management, DCU</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/map.js') }}"></script>
+</body>
+</html>

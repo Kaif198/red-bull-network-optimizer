@@ -1,0 +1,13 @@
+dc_id,name,city,country,latitude,longitude,storage_capacity_millions,fixed_cost_monthly_eur,variable_cost_per_unit_eur,region
+DC1,European Hub,Vienna,Austria,48.2082,16.3738,50,180000,0.03,Europe
+DC2,UK & Ireland Hub,London,UK,51.5074,-0.1278,35,220000,0.04,Europe
+DC3,Western Europe Hub,Paris,France,48.8566,2.3522,40,200000,0.035,Europe
+DC4,North America West,Los Angeles,USA,34.0522,-118.2437,45,250000,0.045,Americas
+DC5,North America East,Miami,USA,25.7617,-80.1918,40,240000,0.04,Americas
+DC6,Latin America Hub,Mexico City,Mexico,19.4326,-99.1332,30,150000,0.03,Americas
+DC7,Asia-Pacific Hub,Singapore,Singapore,1.3521,103.8198,35,210000,0.042,Asia-Pacific
+DC8,East Asia Hub,Tokyo,Japan,35.6762,139.6503,30,280000,0.05,Asia-Pacific
+DC9,Oceania Hub,Sydney,Australia,-33.8688,151.2093,20,190000,0.045,Asia-Pacific
+DC10,MENA Hub,Dubai,UAE,25.2048,55.2708,25,170000,0.035,MENA
+DC11,Africa Hub,Johannesburg,South Africa,-26.2041,28.0473,15,130000,0.03,Africa
+DC12,Eastern Europe Hub,Moscow,Russia,55.7558,37.6173,25,160000,0.032,Europe
